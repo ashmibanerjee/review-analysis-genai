@@ -92,4 +92,14 @@ def main(restaurant_name: Optional[str] = None, prompt: Optional[str] = None):
 
 
 if __name__ == '__main__':
-    main("Pickle Barrel Deli")
+    '''In this project, we use a sample from the Yelp Business reviews Dataset to summarize reviews for the 
+    restaurants. The idea is that for a restaurant in the sample data, we will use Vertex AI TextGenerationModel to 
+    summarize the text according to the prompts. The prompts can be either supplied by the user or generated randomly 
+    from a list of default prompts. The challenge here is that we can't feed all the reviews together for a 
+    particular restaurant into the Vertex AI model as it often exceeds the number of input tokens it can handle. To 
+    overcome this problem, we use feed the model only chunks of texts ensuring that the token count is well below the 
+    accepted limit. We use the tiktoken library and the gpt-3.5-turbo model to give us an estimation of the token 
+    count of the reviews. Reviews are appended to the prompt statement as long as it does not exceed the accepted 
+    input token limit and then fed into the Vertex AI TextGenerationModel for response. Responses from the model are 
+    the concatenated and it is finally fed to the model as a summary to generate the final response. '''
+    main()
