@@ -161,3 +161,7 @@ cython_debug/
 .ipynb_checkpoints
 .config
 notebooks/.ipynb_checkpoints
+.DS_Store
+notebooks/.DS_Store
+notebooks/.*
+scripts/.*
